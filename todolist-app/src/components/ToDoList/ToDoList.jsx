@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DragDropContext } from '@hello-pangea/dnd';
-import Column from '../Column';
+import Column from '../Column/Column.jsx';
 
 const ToDoList = () => {
   const [task, setTask] = useState('');
@@ -55,25 +55,27 @@ const ToDoList = () => {
   };
 
   return (
-    <div className="bg-gray-800 shadow-md rounded p-6 w-full max-w-md">
-      <h1 className="text-2xl font-bold mb-4">Adicionar Tarefa</h1>
-      <div className="flex space-x-2 mb-4">
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-          className="border p-2 rounded w-full bg-gray-700 text-white"
-          placeholder="Nova tarefa"
-        />
-        <button
-          onClick={handleAddTask}
-          className="bg-blue-500 text-white p-2 rounded"
-        >
-          Adicionar
-        </button>
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center space-y-4">
+      <div className="bg-gray-800 shadow-md rounded p-6 w-full max-w-md">
+        <h1 className="text-2xl font-bold mb-4">Adicionar Tarefa</h1>
+        <div className="flex space-x-2">
+          <input
+            type="text"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            className="border p-2 rounded w-full bg-gray-700 text-white"
+            placeholder="Nova tarefa"
+          />
+          <button
+            onClick={handleAddTask}
+            className="bg-blue-500 text-white p-2 rounded"
+          >
+            Adicionar
+          </button>
+        </div>
       </div>
       <DragDropContext onDragEnd={onDragEnd}>
-        <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 w-full">
+        <div className="flex flex-row space-x-4">
           {['backlog', 'done'].map((columnId) => (
             <Column key={columnId} columnId={columnId} tasks={tasks[columnId]} />
           ))}

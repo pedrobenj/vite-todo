@@ -9,7 +9,7 @@ const Task = ({ task, index }) => {
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className="bg-gray-700 p-4 rounded shadow mb-2 text-white"
+          className="bg-gray-700 p-4 rounded shadow mb-2 flex items-center justify-between"
         >
           {task.content}
         </div>

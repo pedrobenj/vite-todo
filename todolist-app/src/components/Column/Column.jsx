@@ -1,6 +1,6 @@
 import React from 'react';
 import { Droppable } from '@hello-pangea/dnd';
-import Task from '../Task';
+import Task from '../Task/Task.jsx';
 
 const Column = ({ columnId, tasks }) => {
   return (
@@ -9,9 +9,9 @@ const Column = ({ columnId, tasks }) => {
         <div
           {...provided.droppableProps}
           ref={provided.innerRef}
-          className="bg-white border border-gray-800 p-6 rounded shadow-md flex-1"
+          className="bg-gray-800 p-6 rounded shadow-md w-full max-w-md"
         >
-          <h2 className="text-xl font-bold mb-4 text-gray-900">
+          <h2 className="text-xl font-bold mb-4">
             {columnId === 'backlog' ? 'Backlog' : 'Done'}
           </h2>
           {tasks.map((task, index) => (
