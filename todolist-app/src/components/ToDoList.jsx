@@ -5,8 +5,8 @@ const ToDoList = () => {
   const [task, setTask] = useState('');
   const [tasks, setTasks] = useState({
     backlog: [
-      { id: '1', content: 'Estudar React' },
-      { id: '2', content: 'Ler documentação do @hello-pangea/dnd' },
+      { id: '1', content: 'Conteudo 1' },
+      { id: '2', content: 'Conteudo 2' },
     ],
     done: [],
   });
